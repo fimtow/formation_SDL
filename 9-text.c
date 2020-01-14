@@ -78,8 +78,6 @@ int main(int argc, char** argv)
     int speed = 5;
     int vectx = speed;
     int vecty = speed;
-    // free the surface from memory
-    SDL_FreeSurface(surface);
 
     // boolean to quit the game
     int stop = 0;
@@ -142,7 +140,7 @@ int main(int argc, char** argv)
         SDL_Color white = {255,255,255};
 
         // creating surface,texture,Rect as usual
-        SDL_Surface* surface = TTF_RenderText_Solid(font,"GAME OVER",white);
+        surface = TTF_RenderText_Solid(font,"GAME OVER",white);
         SDL_Texture* text = SDL_CreateTextureFromSurface(rend, surface);
         SDL_Rect dest;
         SDL_QueryTexture(text, NULL, NULL, &dest.w, &dest.h);
@@ -156,12 +154,17 @@ int main(int argc, char** argv)
 
         // wait a few seconds
         SDL_Delay(5000);
+
+        // clean up resources
+        TTF_Quit();
     }
 
     // clean up resources before exiting
+    SDL_FreeSurface(surface);
     SDL_DestroyTexture(texplayer);
     SDL_DestroyTexture(texcomputer);
     SDL_DestroyTexture(texball);
+    SDL_DestroyRenderer(rend);
     SDL_DestroyWindow(win);
     SDL_Quit();
 }

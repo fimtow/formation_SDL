@@ -77,6 +77,7 @@ int main(int argc, char** argv)
     int speed = 5;
     int vectx = speed;
     int vecty = speed;
+
     // free the surface from memory
     SDL_FreeSurface(surface);
 
@@ -133,6 +134,7 @@ int main(int argc, char** argv)
     SDL_DestroyTexture(texplayer);
     SDL_DestroyTexture(texcomputer);
     SDL_DestroyTexture(texball);
+    SDL_DestroyRenderer(rend);
     SDL_DestroyWindow(win);
     SDL_Quit();
 }

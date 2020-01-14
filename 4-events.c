@@ -80,6 +80,7 @@ int main(int argc, char** argv)
 
     // clean up resources before exiting
     SDL_DestroyTexture(texplayer);
+    SDL_DestroyRenderer(rend);
     SDL_DestroyWindow(win);
     SDL_Quit();
 }

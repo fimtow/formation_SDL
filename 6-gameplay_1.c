@@ -110,6 +110,7 @@ int main(int argc, char** argv)
     SDL_DestroyTexture(texplayer);
     SDL_DestroyTexture(texcomputer);
     SDL_DestroyTexture(texball);
+    SDL_DestroyRenderer(rend);
     SDL_DestroyWindow(win);
     SDL_Quit();
 }
