@@ -53,7 +53,7 @@ int main(int argc, char** argv)
 
     // computer initial  position
     rectcomputer.x = 0;
-    rectcomputer.y = HEIGHT/2 - rectplayer.h/2;
+    rectcomputer.y = HEIGHT/2 - rectcomputer.h/2;
 
     // load the image into memory using SDL_image library function
     surface = IMG_Load("resources/ball.png");
