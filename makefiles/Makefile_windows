@@ -6,7 +6,7 @@ COMPILER_FLAGS = -w -Wl,-subsystem,windows
 #LINKER_FLAGS specifies the libraries we're linking against
 LINKER_FLAGS = -lmingw32 -lSDL2main -lSDL2_image -lSDL2_ttf -lSDL2_mixer -lSDL2
 
-OBJS = 11-bonus.c
+OBJS = 11-refactoring.c
 #CC specifies which compiler we're using
 CC = gcc
 

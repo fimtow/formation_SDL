@@ -12,18 +12,24 @@
 #define RUNNING_STATE 1
 
 typedef struct game_t {
+  // player position
   int player_x;
   int player_y;
 
+  // computer position
   int computer_x;
   int computer_y;
 
+  // ball position
   int ball_x;
   int ball_y;
   int vball_x;
   int vball_y;
 
+  // running or gameover
   int state;
+
+  // controls the speed of the ball (difficulty)
   int game_speed;
   float level;
 } game_t;
