@@ -1,0 +1,16 @@
+sdl_cflags := $(shell pkg-config --cflags sdl2 SDL2_image SDL2_ttf SDL2_mixer)
+sdl_libs := $(shell pkg-config --libs sdl2 SDL2_image SDL2_ttf SDL2_mixer)
+
+OBJS = 10-bonus.c
+#CC specifies which compiler we're using
+CC = gcc
+
+#OBJ_NAME specifies the name of our exectuable
+OBJ_NAME = game
+
+#This is the target that compiles our executable
+all : $(OBJS)
+	$(CC) $(OBJS) $(sdl_cflags) $(sdl_libs) -o $(OBJ_NAME)
+
+clean :
+	rm game
